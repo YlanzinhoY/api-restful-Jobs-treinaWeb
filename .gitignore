@@ -1,0 +1,7 @@
+.vs
+.vscode
+API-rest-net.csproj
+/obj
+/data
+/bin
+/Properties
