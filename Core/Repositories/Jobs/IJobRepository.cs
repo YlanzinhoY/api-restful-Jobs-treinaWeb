@@ -7,7 +7,4 @@ using TWJobs. Api. Jobs. Dtos;
 using TWJobs.Core.Models;
 
 namespace TWJobs.Core.Repositories.Jobs;
-public interface IJobRepository : ICrudRepository<Job, int>
-{
-    object ToModel ( JobRequest jobRequest );
-}
+public interface IJobRepository : ICrudRepository<Job, int>, IPagedRepository<Job> {}

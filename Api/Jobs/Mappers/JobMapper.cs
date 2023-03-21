@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using TWJobs. Api. Jobs. Dtos;
 using TWJobs. Core. Models;
+using TWJobs. Core. Repositories;
 
 namespace TWJobs.Api.Jobs.Mappers
 {
@@ -27,6 +28,22 @@ namespace TWJobs.Api.Jobs.Mappers
                 Title = jobRequest.Title,
                 Salary = jobRequest.Salary,
                 Requirements = string.Join(";", jobRequest.Requirements)
+            };
+        }
+
+        public PagedResponse<JobSummaryResponse> ToPagedSummaryResponse ( PagedResult<Job> pagedResult )
+        {
+             return new PagedResponse<JobSummaryResponse>
+             {
+                Items = pagedResult.Items.Select(ToSummaryResponse).ToList(),
+                PageNumber = pagedResult.PageNumber,
+                PageSize = pagedResult.PageSize,
+                FirstPage = pagedResult.FirstPage,
+                LastPage = pagedResult.LastPage,
+                TotalPages = pagedResult.TotalPages,
+                TotalElements = pagedResult.TotalElements,
+                HasPreviusPage = pagedResult.HasPreviusPage,
+                HasNextPage = pagedResult.HasNextPage,
             };
         }
 
