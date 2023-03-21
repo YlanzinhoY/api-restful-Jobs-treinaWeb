@@ -14,7 +14,7 @@ namespace TWJobs.Core.Data.Context
 
         protected override void OnConfiguring(DbContextOptionsBuilder builder)
         {
-            builder.UseSqlServer("Server=localhost,1433;Database=TWJobs;User ID=sa;Password=1q2w3e4r@#; TrustServerCertificate=True;");
+            builder.UseSqlServer("Server=Localhost,1433;Database=TWJobs;User ID=sa;Password=1q2w3e4r@#; TrustServerCertificate=True;");
         }
 
         protected override void OnModelCreating(ModelBuilder builder)

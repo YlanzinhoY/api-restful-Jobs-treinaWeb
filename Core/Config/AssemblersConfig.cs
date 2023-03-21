@@ -13,6 +13,7 @@ namespace TWJobs.Core.Config
         {
             services.AddScoped<IAssembler<JobSummaryResponse>,  JobSummaryAssembler>();
             services.AddScoped<IAssembler<JobDetailsResponse>, JobDetailAssembler>();
+            services.AddScoped<IPagedAssembler<JobSummaryResponse>, JobSummaryPagedAssembler>();
         }
     }
 }

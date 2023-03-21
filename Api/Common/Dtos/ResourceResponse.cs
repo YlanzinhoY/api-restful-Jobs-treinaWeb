@@ -20,5 +20,14 @@ namespace TWJobs.Api.Common.Dtos
                 Links.Add(link);
             }
         }
+
+        public void AddLinkIf(bool conditional,  LinkResponse link)
+        {
+            if(conditional)
+            {
+                Links.Add(link);
+            }
+        }
+
     }
 }
