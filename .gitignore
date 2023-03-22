@@ -1,5 +1,6 @@
 .vs
 .vscode
+docker-compose.env
 API-rest-net.csproj
 /obj
 /data
